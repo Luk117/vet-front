@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.striped-table .p-datatable-tbody tr:nth-child(even) {
+  background-color: #f6f6f6;
+}

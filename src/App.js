@@ -1,29 +1,16 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
 import './App.css';
-import { ClientService } from './services/ClientService'
-import Axios from "axios";
-
+import MainPage from './components/MainPage';
 
 
 function App() {
 
-  const [client, setClient] = useState("")
-
-
-  const getClient = () => {
-    Axios.get("http://localhost:8081/client/1000265235").then(
-      (response) => {
-        
-        setClient(response.data.id + "/" + response.data.name + "/" + response.data.address);
-      }
-    );
-  };
   return (
     <div>
-      <button onClick={getClient}>Get client</button>
-      Este es el cliente: {client}
+      <MainPage/>
     </div>  
   );
+  
 
 }
 
