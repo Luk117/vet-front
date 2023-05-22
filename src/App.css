@@ -41,3 +41,7 @@
 .striped-table .p-datatable-tbody tr:nth-child(even) {
   background-color: #f6f6f6;
 }
+
+*{
+  box-sizing: border-box;
+}

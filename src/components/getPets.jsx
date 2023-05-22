@@ -6,13 +6,13 @@ import styled from "styled-components";
 
 
 
-function MainPage() {
+function GetPets() {
 
   const [client, setClient] = useState(null);
   const inputRef = useRef(null);
 
   const getClient = () => {
-    Axios.get(`http://localhost:8081/client/${inputRef.current.value}`).then(
+    Axios.get(`http://localhost:8081/client/${inputRef.current.value}/pets`).then(
       (response) => {
         setClient(response.data);
         console.log(response.data)
@@ -26,14 +26,14 @@ function MainPage() {
       <div>
         <input ref={inputRef} type="number" />
         <button onClick={getClient}>Buscar Cliente</button>
-        
       </div>
 
         <Wrap>
           <DataTable value={[client]} className="striped-table" tableStyle={{ minWidth: '20rem' }}>
                 <Column field="id" header="ID" />
                 <Column field="name" header="Name" />
-                <Column field="address" header="Address" />
+                <Column field="dateCreated" header="dateCreated" />
+                
           </DataTable>
         </Wrap>
       </Container>
@@ -41,7 +41,7 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default GetPets;
 
 const Container = styled.div`
   margin-top: 60px;

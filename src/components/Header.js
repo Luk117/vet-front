@@ -4,31 +4,25 @@ import styled from 'styled-components'
 function Header() {
     return (
       <Nav>
-  
+          <Logo src="/images/logo.png" />  
           <NavMenu>
   
               <a>
-                  <span>Home</span>
+                  <img src="/images/search.png"/>
+                  <span>Buscar Cliente</span>
               </a>
               <a>
-                  <span>Search</span>
+                  <img src="/images/search.png"/>
+                  <span>Buscar Mascota</span>
               </a>
               <a>
-                  <span>WatchList</span>
-              </a>
-              <a>
-                  <span>Originals</span>
-              </a>
-              <a>
-                  <span>Movies</span>
-              </a>
-              <a>
-                  <span>Series</span>
+                  <img src="/images/search.png"/>
+                  <span>Buscar Reserva</span>
               </a>
   
           </NavMenu>
-  
-          <UserImg src="https://i.pinimg.com/736x/eb/e5/51/ebe551fd04f7bc87fd710644a1dbfd83.jpg"/>
+          
+          <UserImg src="https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*"/>
   
           
   
@@ -40,7 +34,7 @@ function Header() {
   
   const Nav= styled.nav`
       height: 70px;
-      background: #090b13;
+      background: #E1C16E;
       display: flex;
       align-items: center;
       padding: 0 15px;
