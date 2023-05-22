@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import MainPage from './components/MainPage';
+import MainPage from './components/GetClient';
 import Header from './components/Header';
 import ImgSlider from './components/imgSlider';
 import Home from './components/Home';
@@ -11,7 +11,7 @@ function App() {
   return (
     <div>
       <Header/>
-      
+
       <Home/>
     </div>  
   );

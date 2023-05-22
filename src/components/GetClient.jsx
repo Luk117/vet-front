@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
-import { DataTable } from 'primereact/datatable';
+import DataTable from 'react-data-table-component';
 import { Column } from 'primereact/column';
 import Axios from "axios";
 import styled from "styled-components";
 
 
 
-function MainPage() {
+function GetClient() {
 
   const [client, setClient] = useState(null);
   const inputRef = useRef(null);
@@ -20,6 +20,24 @@ function MainPage() {
     );
   }
 
+  const columns = [
+    {
+      name: 'ID',
+      selector: 'id',
+      sortable: true,
+    },
+    {
+      name: 'Name',
+      selector: 'name',
+      sortable: true,
+    },
+    {
+      name: 'Address',
+      selector: 'address',
+      sortable: true,
+    },
+  ];
+
   return (
 
     <Container>
@@ -30,18 +48,22 @@ function MainPage() {
       </div>
 
         <Wrap>
-          <DataTable value={[client]} className="striped-table" tableStyle={{ minWidth: '20rem' }}>
-                <Column field="id" header="ID" />
-                <Column field="name" header="Name" />
-                <Column field="address" header="Address" />
-          </DataTable>
+          <DataTable
+            columns={columns}
+            data={client ? [client] : []}
+            className="striped-table"
+            style={{ minWidth: '40rem' }}
+            pagination
+            striped
+
+          />
         </Wrap>
       </Container>
 
   );
 }
 
-export default MainPage;
+export default GetClient;
 
 const Container = styled.div`
   margin-top: 60px;

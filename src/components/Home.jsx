@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import ImgSlider from './imgSlider'
-import MainPage from './MainPage'
+import MainPage from './GetClient'
 import GetPets from './getPets'
 
 function Home(){
@@ -9,6 +9,7 @@ function Home(){
         <Container>
             <ImgSlider/>
             <MainPage/>
+            <GetPets/>
         </Container>
     )
 }

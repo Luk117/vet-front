@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { DataTable } from 'primereact/datatable';
+import DataTable from "react-data-table-component";
 import { Column } from 'primereact/column';
 import Axios from "axios";
 import styled from "styled-components";
@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 function GetPets() {
 
-  const [client, setClient] = useState(null);
+  const [client, setClient] = useState([]);
   const inputRef = useRef(null);
 
   const getClient = () => {
@@ -20,21 +20,40 @@ function GetPets() {
     );
   }
 
+  const columns = [
+    {
+      name: "ID",
+      selector: "id",
+      sortable: true,
+    },
+    {
+      name: "Name",
+      selector: "name",
+      sortable: true,
+    },
+    {
+      name: "Date Created",
+      selector: "dateCreated",
+      sortable: true,
+    },
+  ];
+
   return (
 
     <Container>
       <div>
         <input ref={inputRef} type="number" />
-        <button onClick={getClient}>Buscar Cliente</button>
+        <button onClick={getClient}>Buscar Mascotas</button>
       </div>
 
         <Wrap>
-          <DataTable value={[client]} className="striped-table" tableStyle={{ minWidth: '20rem' }}>
-                <Column field="id" header="ID" />
-                <Column field="name" header="Name" />
-                <Column field="dateCreated" header="dateCreated" />
-                
-          </DataTable>
+        <DataTable
+          columns={columns}
+          data={client}
+          className="striped-table"
+          pagination
+          striped
+        />
         </Wrap>
       </Container>
 
