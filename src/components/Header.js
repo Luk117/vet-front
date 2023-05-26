@@ -38,7 +38,7 @@ function Header() {
       display: flex;
       align-items: center;
       padding: 0 15px;
-      overflow-x: hidden;
+      overflow: hidden;
   
   `
   const Logo = styled.img`
