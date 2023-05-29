@@ -21,9 +21,7 @@ let settings={
         <Wrap>
             <img src="/images/PetVeterinary.png" />
         </Wrap>
-        <Wrap>
-            <img src="/images/PetVeterinary.png" />
-        </Wrap>
+        
     </Carousel>
   )
 }
@@ -69,4 +67,5 @@ const Wrap = styled.div`
             border: 4px solid rgba(249,248,249,0.8);
         }
     }
+    
 `

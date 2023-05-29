@@ -2,22 +2,31 @@ import React from 'react'
 import styled from 'styled-components';
 
 const PageSelector = () => {
-    const handleBannerClic = () => {
-        alert("SE SUPONE QUE AQUI LUKAS DEBE IMPLEMENTAR ALGO PARA QUE CUANDO ALGUIEN LE DE CLIC AL BANNER LE MANDE A OTRO LUGAR.")
-    }
+    const handleBannerClientClick = () => {
+        window.location.href = 'http://localhost:3000/ClientSite';
+      };
+
+    const handleBannerPetClick = () => {
+        window.location.href = 'http://localhost:3000/PetSite';
+      };
+    
+      const handleBannerReservationClick = () => {
+        window.location.href = 'http://localhost:3000/ReservationSite';
+      };
+
     return (
     <BannersContainer>
-        <BannerContainer onClick={() => handleBannerClic()}>
+        <BannerContainer onClick={handleBannerClientClick}>
             <BannerImage src='/images/perro.jpg' alt='Banner image'/>
-            <h3>REGISTRA A TU MASCOTA</h3>
+            <h3>REGISTRO DE CLIENTES</h3>
         </BannerContainer>
-        <BannerContainer onClick={() => handleBannerClic()}>
+        <BannerContainer onClick={handleBannerPetClick}>
             <BannerImage src='/images/perro.jpg' alt='Banner image'/>
-            <h3>AGENDA UN HORARIO</h3>
+            <h3>RESGISTRO DE MASCOTAS</h3>
         </BannerContainer>
-        <BannerContainer onClick={() => handleBannerClic()}>
+        <BannerContainer onClick={handleBannerReservationClick}>
             <BannerImage src='/images/perro.jpg' alt='Banner image'/>
-            <h3>MIRA TUS RESERVAS</h3>
+            <h3>REGISTRO DE RESERVAS</h3>
         </BannerContainer>
     </BannersContainer>
     )
@@ -37,7 +46,7 @@ justify-content: center;
 gap: 20px;
 `
 const BannerContainer = styled.div`
-background-color: #672A2A;
+background-color: #1F3D44;
 height: 300px;
 width: 300px;
 border-radius: 15px;

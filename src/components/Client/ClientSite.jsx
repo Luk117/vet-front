@@ -1,22 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import ImgSlider from './imgSlider'
+import ImgSlider from '../imgSlider'
 import MainPage from './GetClient'
-import GetPets from './getPets'
-import PageSelector from './PageSelector'
+import PostClient from './PostClient'
 
-function Home(){
+
+function ClientSite(){
     return (
         <Container>
             <ImgSlider/>
-            <PageSelector/>
+            <PostClient/>
             <MainPage/>
-            <GetPets/>
         </Container>
     )
 }
 
-export default Home
+export default ClientSite
 
 const Container = styled.main`
     min-height: calc(100vh - 70 px);

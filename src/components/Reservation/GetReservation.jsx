@@ -1,18 +1,18 @@
 import React, { useState, useRef } from "react";
-import DataTable from 'react-data-table-component';
+import DataTable from "react-data-table-component";
 import { Column } from 'primereact/column';
 import Axios from "axios";
 import styled from "styled-components";
 
 
 
-function GetClient() {
+function GetReservations() {
 
-  const [client, setClient] = useState(null);
+  const [client, setClient] = useState([]);
   const inputRef = useRef(null);
 
   const getClient = () => {
-    Axios.get(`http://localhost:8081/client/${inputRef.current.value}`).then(
+    Axios.get(`http://localhost:8081/client/${inputRef.current.value}/reservations`).then(
       (response) => {
         setClient(response.data);
         console.log(response.data)
@@ -22,18 +22,13 @@ function GetClient() {
 
   const columns = [
     {
-      name: 'ID',
-      selector: 'id',
+      name: "ID",
+      selector: "idReserva",
       sortable: true,
     },
     {
-      name: 'Name',
-      selector: 'name',
-      sortable: true,
-    },
-    {
-      name: 'Address',
-      selector: 'address',
+      name: "Fecha",
+      selector: "reservationDate",
       sortable: true,
     },
   ];
@@ -43,27 +38,24 @@ function GetClient() {
     <Container>
       <div>
         <input ref={inputRef} type="number" />
-        <button onClick={getClient}>Buscar Cliente</button>
-        
+        <button onClick={getClient}>Buscar Reservas</button>
       </div>
 
         <Wrap>
-          <DataTable
-            columns={columns}
-            data={client ? [client] : []}
-            className="striped-table"
-            style={{ minWidth: '40rem' }}
-            pagination
-            striped
-
-          />
+        <DataTable
+          columns={columns}
+          data={client}
+          className="striped-table"
+          pagination
+          striped
+        />
         </Wrap>
       </Container>
 
   );
 }
 
-export default GetClient;
+export default GetReservations;
 
 const Container = styled.div`
   margin-top: 60px;

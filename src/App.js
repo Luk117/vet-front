@@ -1,18 +1,28 @@
 import React from 'react';
 import './App.css';
-import MainPage from './components/GetClient';
+import MainPage from './components/Client/GetClient';
 import Header from './components/Header';
 import ImgSlider from './components/imgSlider';
-import Home from './components/Home';
+import Home from './components/Home/Home';
+import PetSite from './components/Pets/PetSite';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ClientSite from './components/Client/ClientSite';
+import ReservationSite from './components/Reservation/ReservationSite';
 
 
 function App() {
 
   return (
     <div>
-      <Header/>
-
-      <Home/>
+      <Router>
+        <Header/>
+        <Routes>
+          <Route exact path="/" element={<Home/>}/>
+          <Route exact path="/ClientSite" element={<ClientSite/>}/>
+          <Route exact path="/PetSite" element={<PetSite/>}/>
+          <Route exact path="/ReservationSite" element={<ReservationSite/>}/>
+        </Routes>
+      </Router>
     </div>  
   );
   

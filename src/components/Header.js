@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 function Header() {
+
+    
     return (
       <Nav>
           <Logo src="/images/logo.png" />  
@@ -34,7 +36,7 @@ function Header() {
   
   const Nav= styled.nav`
       height: 70px;
-      background: #E1C16E;
+      background: #1F3D44;
       display: flex;
       align-items: center;
       padding: 0 15px;
