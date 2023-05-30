@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ImgSlider from '../imgSlider'
 import PostReservation from './PostReservation'
 import GetReservations from './GetReservation'
+import SendReservation from './SendReservation'
 
 
 function ReservationSite(){
@@ -11,6 +12,7 @@ function ReservationSite(){
             <ImgSlider/>
             <PostReservation/>
             <GetReservations/>
+            <SendReservation/>
         </Container>
     )
 }
